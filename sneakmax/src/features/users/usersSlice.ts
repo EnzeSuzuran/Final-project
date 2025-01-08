@@ -1,4 +1,4 @@
-// src/features/users/usersSlice.ts
+
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
@@ -19,7 +19,7 @@ const initialState: UsersState = {
   error: null,
 };
 
-// Создание асинхронного thunk для получения пользователей
+
 export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
   const response = await axios.get<User[]>('https://api.example.com/users');
   return response.data;

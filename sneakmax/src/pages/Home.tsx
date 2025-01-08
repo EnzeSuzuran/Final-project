@@ -1,13 +1,12 @@
-import React from 'react';
-import ProductCard from '../components/ProductCard';
-import Filter from '../components/Filter';
 
-const Home = () => {
-    // Здесь вы будете получать данные о продуктах
-    const products = [
-        { id: 1, name: 'Sneaker 1', price: 100, image: 'image1.jpg' },
-        { id: 2, name: 'Sneaker 2', price: 150, image: 'image2.jpg' },
-    ];
+import React from 'react';
+import ProductCard from '../components/ProductCard/ProductCard';
+import Filter from '../components/Filter/Filter';
+import sneakersData from '../data/sneakers.json';
+import { Sneakers } from '../types';
+
+const Home: React.FC = () => {
+    const products: Sneakers[] = sneakersData.sneakersData;
 
     return (
         <div>

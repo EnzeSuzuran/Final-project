@@ -1,7 +1,6 @@
 import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 
-// Определите интерфейс для данных формы
 interface FormData {
     name: string;
     email: string;
@@ -10,10 +9,10 @@ interface FormData {
 const ContactForm: React.FC = () => {
     const { register, handleSubmit } = useForm<FormData>();
 
-    // Используйте SubmitHandler для типизации функции onSubmit
+
     const onSubmit: SubmitHandler<FormData> = (data) => {
         console.log(data);
-        // Здесь вы можете отправить данные на сервер
+
     };
 
     return (

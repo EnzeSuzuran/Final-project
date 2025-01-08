@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from '../../app/store';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from './usersSlice';
 import { RootState } from '../../app/store';
+import { AppDispatch } from '../../app/store';
 
 export const Users: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { users, loading, error } = useSelector((state: RootState) => state.users);
 
   useEffect(() => {

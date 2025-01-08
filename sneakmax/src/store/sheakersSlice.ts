@@ -1,19 +1,26 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { Sneakers } from '../types';
 
 export const fetchSneakers = createAsyncThunk('sneakers/fetchSneakers', async () => {
-    const response = await axios.get('https://api.mokky.dev/sneakers.json');
-    return response.data;
+    const response = await fetch('https://api.example.com/sneakers');
+    if (!response.ok) {
+        throw new Error('Ошибка при загрузке данных');
+    }
+    return (await response.json()) as Sneakers[];
 });
 
 const sneakersSlice = createSlice({
     name: 'sneakers',
-    initialState: [],
+    initialState: [] as Sneakers[],
     reducers: {},
     extraReducers: (builder) => {
-        builder.addCase(fetchSneakers.fulfilled, (state, action) => {
-            return action.payload;
-        });
+        builder
+            .addCase(fetchSneakers.fulfilled, (state, action) => {
+                return action.payload;
+            })
+            .addCase(fetchSneakers.rejected, (state, action) => {
+                console.error(action.error.message);
+            });
     },
 });
 

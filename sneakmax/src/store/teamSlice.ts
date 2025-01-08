@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchTeam = createAsyncThunk('team/fetchTeam', async () => {
-    const response = await axios.get('https://api.mokky.dev/team.json');
+    const response = await axios.get('https://api.mokky.dev/team.json'); 
     return response.data;
 });
 

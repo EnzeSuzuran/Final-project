@@ -1,0 +1,154 @@
+@font-face {
+	font-family: "Intro-Regular";
+	src: url("../styles/fonts/intro-regular/intro-regular.eot");
+	src: url("../styles/fonts/intro-regular/intro-regular.eot?#iefix") format("embedded-opentype"),
+		url("../styles/fonts/intro-regular/intro-regular.otf") format("opentype"),
+		url("../styles/fonts/intro-regular/intro-regular.svg") format("svg"),
+		url("../styles/fonts/intro-regular/intro-regular.ttf") format("truetype"),
+		url("../styles/fonts/intro-regular/intro-regular.woff") format("woff"),
+		url("../styles/fonts/intro-regular/intro-regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Intro-Bold";
+	src: url("../styles/fonts/intro-bold/intro-bold.eot");
+	src: url("../styles/fonts/intro-bold/intro-bold.eot?#iefix") format("embedded-opentype"),
+		url("../styles/fonts/intro-bold/intro-bold.otf") format("opentype"),
+		url("../styles/fonts/intro-bold/intro-bold.svg") format("svg"),
+		url("../styles/fonts/intro-bold/intro-bold.ttf") format("truetype"),
+		url("../styles/fonts/intro-bold/intro-bold.woff") format("woff"),
+		url("../styles/fonts/intro-bold/intro-bold.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+  font-family: 'Intro';
+  src: local('Intro Book'), local('Intro-Book'),
+      url('../styles/fonts/intro-book/Intro-Book.woff2') format('woff2'),
+      url('../styles/fonts/intro-book/Intro-Book.woff') format('woff'),
+      url('../styles/fonts/intro-book/Intro-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bg: #484283;
+  --accent: #f14f4f;
+  --text: #444b58;
+  --small-text: #dbbba9;
+  --sec-bg: #fff4ee;
+  --gray: #b2b5bb;
+  --font-family: "Intro";
+  --second-family: "Intro-Regular";
+  --third-family: "Intro-Bold";
+}
+
+a {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #afafaf;
+}
+
+body {
+  margin: 0;
+  max-width: 1920px;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+h1 {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 36px;
+  color: #000;
+  line-height: 1.1;
+}
+
+h2 {
+  font-family: var(--third-family);
+  font-weight: 700;
+  font-size: 30px;
+  color: #000;
+}
+
+h3 {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 24px;
+  color: #000;
+}
+
+button {
+  border-radius: 4px;
+  padding: 22px 47px;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: filter 0.3s;
+  border: 0;
+}
+
+button:hover {
+  filter: brightness(0.9);
+}
+
+button:focus,
+button:focus-visible {
+  filter: brightness(0.95);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+  header, main, footer {
+    padding: 0 15px; /* Уменьшение отступов */
+  }
+
+  h1 {
+    font-size: 28px; /* Уменьшение размера заголовка */
+  }
+
+  button {
+    padding: 15px 30px; /* Уменьшение отступов кнопки */
+  }
+}
+
+@media (max-width: 1024px) {
+  header, main, footer {
+    padding: 0 20px; /* Увеличение отступов */
+  }
+
+  h1 {
+    font-size: 32px; /* Уменьшение размера заголовка */
+  }
+
+  button {
+    padding: 18px 40px; /* Уменьшение отступов кнопки */
+  }
+}
+
+@media (max-width: 374px) {
+  header, main, footer {
+    padding: 0 10px; /* Минимальные отступы для мобильных устройств */
+  }
+
+  h1 {
+    font-size: 24px; /* Уменьшение размера заголовка */
+  }
+
+  button {
+    padding: 10px 20px; /* Уменьшение отступов кнопки */
+  }
+}
